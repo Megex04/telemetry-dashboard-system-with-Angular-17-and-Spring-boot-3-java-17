@@ -1,0 +1,20 @@
+<!-- dashboard.component.html -->
+<h1>📈 Dashboard de Telemetría</h1>
+
+<div class="grid">
+  <!-- 1ª columna -->
+  <app-line-chart    [data]="telemetry$   | async"></app-line-chart>
+  <app-bar-chart     [data]="bar$         | async"></app-bar-chart>
+  <app-donut-chart   [data]="donut$       | async"></app-donut-chart>
+
+  <!-- 2ª columna -->
+  <app-area-chart       [data]="telemetry$ | async"></app-area-chart>
+  <app-stacked-bar      [data]="status$    | async"></app-stacked-bar>
+  <app-gauge-chart      [value]="cpu$ | async"></app-gauge-chart>
+
+  <!-- centrado span‑2 -->
+  <div class="span-2">
+    <app-scatter-chart [data]="scatter$ | async"></app-scatter-chart>
+  </div>
+  
+</div>
